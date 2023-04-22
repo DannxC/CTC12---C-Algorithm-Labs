@@ -1,0 +1,10 @@
+build
+output
+pdfs
+.vscode
+data
+matlabhash
+zipaParaEntregar
+
+*.docx
+*.zip

@@ -4,7 +4,9 @@ pdfs
 .vscode
 data
 matlabhash
+matlabSort
 zipaParaEntregar
 
 *.docx
 *.zip
+*.csv

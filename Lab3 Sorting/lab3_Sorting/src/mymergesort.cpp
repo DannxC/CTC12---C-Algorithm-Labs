@@ -6,8 +6,20 @@ void merge(std::vector<int> &v, int left, int mid, int right) {
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
-    // Create temporary arrays to store the left and right subarrays
-    std::vector<int> L(n1), R(n2);
+    // Declare static vectors L and R to store the left and right subarrays.
+    // As they are static, their memory allocation persists across function calls.
+    // Note: This implementation is not thread-safe, as multiple threads accessing
+    // these static vectors concurrently could lead to data races and unexpected behavior.
+    static std::vector<int> L, R;
+
+    // Check if the sizes of the static vectors L and R are sufficient
+    // for the current subarray sizes (n1 and n2). If not, resize them accordingly.
+    if (L.size() < static_cast<size_t>(n1)) {
+        L.resize(n1);
+    }
+    if (R.size() < static_cast<size_t>(n2)) {
+        R.resize(n2);
+    }
 
     // Copy data from v to the temporary arrays
     for (i = 0; i < n1; i++)

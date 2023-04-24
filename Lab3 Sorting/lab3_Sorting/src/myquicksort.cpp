@@ -2,18 +2,18 @@
 
 // Helper function to find the median of three values
 int medianOfThree(std::vector<int> &v, int left, int right) {
-    // int mid = (left + right) / 2;
+    int mid = (left + right) / 2;
     
-    // if (v[left] > v[mid])
-    //     std::swap(v[left], v[mid]);
+    if (v[left] > v[mid])
+        std::swap(v[left], v[mid]);
     
-    // if (v[left] > v[right])
-    //     std::swap(v[left], v[right]);
+    if (v[left] > v[right])
+        std::swap(v[left], v[right]);
     
-    // if (v[mid] > v[right])
-    //     std::swap(v[mid], v[right]);
+    if (v[mid] > v[right])
+        std::swap(v[mid], v[right]);
     
-    return (left + right)/2;
+    return mid;
 }
 
 // Partition function for QuickSort, which takes a vector, left and right indices, and a boolean for fixed pivot

@@ -10,15 +10,16 @@ void merge(std::vector<int> &v, int left, int mid, int right) {
     // As they are static, their memory allocation persists across function calls.
     // Note: This implementation is not thread-safe, as multiple threads accessing
     // these static vectors concurrently could lead to data races and unexpected behavior.
-    static std::vector<int> L, R;
+    int v_size = v.size();
+    static std::vector<int> L(v_size), R(v_size);
 
     // Check if the sizes of the static vectors L and R are sufficient
     // for the current subarray sizes (n1 and n2). If not, resize them accordingly.
-    if (L.size() < static_cast<size_t>(n1)) {
-        L.resize(n1);
+    if (L.size() < v_size) {
+        L.resize(v_size);
     }
-    if (R.size() < static_cast<size_t>(n2)) {
-        R.resize(n2);
+    if (R.size() < v_size) {
+        R.resize(v_size);
     }
 
     // Copy data from v to the temporary arrays

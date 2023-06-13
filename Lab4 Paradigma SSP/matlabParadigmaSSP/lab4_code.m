@@ -30,7 +30,7 @@ function lab4_code()
     SSP_A2_P5   = readtable('../lab4_ParadigmaSSP/build/SSP_Tests_Timed_A2_A2_P5.dat');
     SSP_A2_RAND = readtable('../lab4_ParadigmaSSP/build/SSP_Tests_Timed_A2_A2_RAND.dat');
 
-    % SSP A2 (Backtracking)
+    % SSP PD (Backtracking)
     SSP_PD_AVIS = readtable('../lab4_ParadigmaSSP/build/SSP_Tests_Timed_PD_PD_AVIS.dat');
     SSP_PD_EVOD = readtable('../lab4_ParadigmaSSP/build/SSP_Tests_Timed_PD_PD_EVOD.dat');
     SSP_PD_P3   = readtable('../lab4_ParadigmaSSP/build/SSP_Tests_Timed_PD_PD_P3.dat');

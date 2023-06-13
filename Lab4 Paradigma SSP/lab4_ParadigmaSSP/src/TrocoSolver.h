@@ -11,6 +11,10 @@ class TrocoSolverDivConquer : public TrocoSolverAbstract {
 private:
     long recursivecalls;
 
+    // Declaração do método Recursivo
+    //bool DCsolve(const std::vector<unsigned int> &denom, unsigned int value, std::vector<unsigned int> &coins);
+    void DCsolve(const std::vector<unsigned int> &denom, unsigned int value, std::vector<unsigned int> &coins, std::vector<unsigned int> &best_coins, unsigned int &best_num_coins, unsigned int num_coins);
+
 public:
     
     virtual void solve(const std::vector<unsigned int> &denom,unsigned int value, std::vector<unsigned int> &coins); 
@@ -23,6 +27,9 @@ public:
 }; 
 
 class TrocoSolverPD : public TrocoSolverAbstract {
+private:
+
+    void PDsolve(const std::vector<unsigned int> &denom, unsigned int value, std::vector<unsigned int> &coins);
 
 public:
     
@@ -33,6 +40,10 @@ public:
 }; 
 
 class TrocoSolverGreedy : public TrocoSolverAbstract {
+
+private:
+
+    void Gsolve(const std::vector<unsigned int> &denom, unsigned int value, std::vector<unsigned int> &coins);
 
 public:
     

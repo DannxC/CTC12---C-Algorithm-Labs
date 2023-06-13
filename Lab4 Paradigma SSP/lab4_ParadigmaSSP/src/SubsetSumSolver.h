@@ -25,7 +25,6 @@
 
 class SSPSolverAluno2 : public SubsetSumSolverAbstract {
 
-    
 public:
     virtual bool solve(const std::vector< long> &input,
                         long value, std::vector< char> &output);
@@ -35,7 +34,6 @@ public:
 }; 
 
 class SSPSolverExtra : public SubsetSumSolverAbstract {
-
     
 public:
     

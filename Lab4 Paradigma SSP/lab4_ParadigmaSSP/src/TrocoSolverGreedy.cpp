@@ -1,13 +1,22 @@
 #include <TrocoSolver.h>
 
-void TrocoSolverGreedy::solve(const std::vector<unsigned int> &denom,unsigned int value, std::vector<unsigned int> &coins) {
-
-    // fills a dummy answer with 3 coins of each denomination    
-    coins.resize(denom.size(),3); 
+void TrocoSolverGreedy::solve(const std::vector<unsigned int> &denom, unsigned int value, std::vector<unsigned int> &coins) {
+    // Reinicia o vetor de moedas
+    coins.resize(denom.size(), 0);
     
-    
-}//solve
+    // Solução Gulosa (Greedy)
+    Gsolve(denom, value, coins);
+}
 
-// dica: iterar um vetor de tras pra frente
-//https://stackoverflow.com/questions/3610933/iterating-c-vector-from-the-end-to-the-begin
-//http://www.cplusplus.com/reference/vector/vector/rbegin/
+void TrocoSolverGreedy::Gsolve(const std::vector<unsigned int> &denom, unsigned int value, std::vector<unsigned int> &coins) {
+    int currentChange = value;
+
+    // Itera de trás pra frente
+    for (int i = denom.size() - 1; i >= 0; i--) {
+        while (denom[i] <= currentChange) {
+            coins[i]++;                     // Incrementa a quantidade de moedas da denominação atual
+            currentChange -= denom[i];      // Subtrai o valor da denominação atual do troco atual
+        }
+        if (currentChange == 0) { break; }  // Se o troco atual for zero, interrompe o loop
+    }
+}
